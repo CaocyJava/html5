@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标悬停图片特效</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            height: 700px;
+            width: 900px;
+            margin: 0 auto;
+        }
+        .container .row:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .container .row .col{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 60px 100px 0 90px;
+            float: left;
+        }
+        .container .row .col .shadow{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 50%;
+            transition: all 0.5s ease-out;
+            z-index: 11;
+        }
+        .container .row .col .shadow img{
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .container .row .shadow:after{
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 20px rgba(208,208,208,0.5) inset;
+        }
+        .container .row .col .text{
+            position: absolute;
+            top: 0px;
+            left:  -200px;
+            height: 250px;
+            width: 250px;
+            text-align: center;
+            background-color: #2f332a;
+            border-radius: 50%;
+            transition: all 0.5s ease-out;
+            opacity: 0;
+        }
+        .container .row .col .text span{
+            display: block;
+            color: white;
+            font: italic bold 30px/100px "微软雅黑";
+            margin-top: 60px;
+        }
+        .container .row .col .text p{
+            color: white;
+            font: 20px/20px "微软雅黑";
+        }
+        .container .row .col:hover > .shadow{
+            left: 200px;
+            top: 75px;
+            transform: scale(0.5,0.5);
+        }
+        .container .row .col:hover > .text{
+            left: 0px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="shadow">
+                <img src="images/5.jpg">
+            </div>
+            <div class="text">
+                <span>Picture Name</span>
+                <p>picture description</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="shadow">
+                <img src="images/2.jpg">
+            </div>
+            <div class="text">
+                <span>Picture Name</span>
+                <p>picture description</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="shadow">
+                <img src="images/6.jpg">
+            </div>
+            <div class="text">
+                <span>Picture Name</span>
+                <p>picture description</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="shadow">
+                <img src="images/4.jpg">
+            </div>
+            <div class="text">
+                <span>Picture Name</span>
+                <p>picture description</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

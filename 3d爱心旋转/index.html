@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: black;
+            perspective: 800px;
+        }
+        .heart{
+            width: 150px;
+            height: 200px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: heart 10s linear infinite;
+        }
+        .rib{
+            position: absolute;
+            height: 200px;
+            width: 160px;
+            border: solid red;
+            border-radius: 50% 50% 0px 50%/50% 50% 0px 50%;
+            border-width: 1px 1px 0 0;
+        }
+        @keyframes heart {
+            from{
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            to{
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+        }
+        .heart ul li{
+            position: absolute;
+            top: 100px;
+            left: 15px;
+            list-style: none;
+            width: 130px;
+            height: 130px;
+        }
+        .heart ul li:nth-child(1){
+            top: -30px;
+            transform: rotateX(90deg) translateY(65px);
+            transform-origin: bottom;
+            background: url("images/1.png") no-repeat center/100% 100%;
+        }
+        .heart ul li:nth-child(2){
+            transform: translateZ(-65px);
+            background: url("images/2.png") no-repeat center/100% 100%;
+        }
+        .heart ul li:nth-child(3){
+            left: 145px;
+            transform: rotateY(90deg) translateX(-65px);
+            transform-origin: left;
+            background: url("images/3.png") no-repeat center/100% 100%;
+        }
+        .heart ul li:nth-child(4){
+            top: 230px;
+            transform: rotateX(-90deg) translateY(-65px);
+            transform-origin: top;
+            background: url("images/4.png") no-repeat center/100% 100%;
+        }
+        .heart ul li:nth-child(5){
+            left: -115px;
+            transform: rotateY(-90deg) translateX(65px);
+            transform-origin: right;
+            background: url("images/5.png") no-repeat center/100% 100%;
+        }
+        .heart ul li:nth-child(6){
+            transform: translateZ(65px);
+            background: url("images/6.png") no-repeat center/100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var heart = document.getElementsByClassName("heart")[0];
+        /*var html = "";
+        for(var i=0;i<36;i++){
+            html += "<div class='rib' style='transform: rotateY("+(i*10)+"deg) rotateZ(57deg) translateX(75px)'></div>";
+        }
+        heart.innerHTML = html;*/
+        for(var i=0;i<36;i++){
+            var div = document.createElement("div");
+            div.className = "rib";
+            div.style.transform = "rotateY("+(i*10)+"deg) rotateZ(57deg) translateX(75px)";
+            heart.append(div);
+        }
+    </script>
+</body>
+</html>

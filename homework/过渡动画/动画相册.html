@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画相册</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            height: 0;
+            line-height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        .container{
+            width: 630px;
+            height: 300px;
+            margin: 200px auto;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 5px blue,0 0 15px green;
+        }
+        .container ul li{
+            list-style: none;
+            float: left;
+            padding: 0 5px 5px 0;
+        }
+        .container ul li img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px grey;
+            transition: all 500ms;
+        }
+        .container ul li img:hover{
+            transform: rotate(360deg) scale(1.5,1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <ul>
+            <li><img src="images/imagen1.jpg"></li>
+            <li><img src="images/imagen2.jpg"></li>
+            <li><img src="images/imagen3.jpg"></li>
+            <li><img src="images/imagen4.jpg"></li>
+            <li><img src="images/imagen5.jpg"></li>
+            <li><img src="images/imagen6.jpg"></li>
+            <li><img src="images/imagen7.jpg"></li>
+            <li><img src="images/imagen8.jpg"></li>
+            <li><img src="images/imagen9.jpg"></li>
+            <li><img src="images/imagen10.jpg"></li>
+            <li><img src="images/imagen11.jpg"></li>
+            <li><img src="images/imagen12.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>

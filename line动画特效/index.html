@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#000;
+            color:#fff;
+            font-family:"Ruthie",cursive;
+        }
+        header{
+            font-size:100px;
+            text-align:center;
+        }
+        #websvg{
+            width:1000px;
+            margin:0px auto;
+            text-align:center;
+        }
+        #websvg .grid{
+            width:300px;
+            height:460px;
+            float:left;
+            margin:20px 10px;
+            position:relative;
+        }
+        .grid h3{
+            font-size:180px;
+            font-weight:normal;
+            line-height:370px;
+        }
+        .grid svg{
+             position:absolute;
+             top:0;
+             left:0;
+        }
+        .grid svg line{
+            stroke-width:4;
+            stroke:#6600ff;
+            transition:0.8s;
+        }
+        .grid svg:hover line{
+            stroke-width:14;
+        }
+        .grid svg:hover line.top,.grid svg:hover line.bottom{
+            stroke-dasharray:330 240;
+        }
+        .grid svg:hover line.left,.grid svg:hover line.right{
+            stroke-dasharray:490 400;
+        }
+        .grid svg:hover line.top{
+            transform:translateX(-300px);
+        }
+        .grid svg:hover line.bottom{
+            transform:translateX(300px);
+        }
+        .grid svg:hover line.left{
+            transform:translateY(460px);
+        }
+        .grid svg:hover line.right{
+            transform:translateY(-460px);
+        }
+    </style>
+</head>
+<body>
+<header>HTML5</header>
+<div id="websvg">
+    <div class="grid">
+        <svg width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="460" x2="0" y2="-920"></line>
+            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"></line>
+            <line class="right" x1="300" y1="0" x2="300" y2="1380"></line>
+        </svg>
+        <h3>S</h3>
+        <span>2016！我们一起学习！一起进步</span>
+    </div>
+    <div class="grid">
+        <svg width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="460" x2="0" y2="-920"></line>
+            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"></line>
+            <line class="right" x1="300" y1="0" x2="300" y2="1380"></line>
+        </svg>
+        <h3>V</h3>
+        <span>2017！我们一起学习！一起进步</span>
+    </div>
+    <div class="grid">
+        <svg width="100%" height="100%">
+            <line class="top" x1="0" y1="0" x2="900" y2="0"></line>
+            <line class="left" x1="0" y1="460" x2="0" y2="-920"></line>
+            <line class="bottom" x1="300" y1="460" x2="-600" y2="460"></line>
+            <line class="right" x1="300" y1="0" x2="300" y2="1380"></line>
+        </svg>
+        <h3>G</h3>
+        <span>2018！我们一起学习！一起进步</span>
+    </div>
+</div>
+</body>
+</html>

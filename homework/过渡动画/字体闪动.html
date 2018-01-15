@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体闪动</title>
+    <style>
+        div{
+            display: block;
+            width: 400px;
+            margin: 100px auto;
+        }
+        div span{
+            font: italic bold 80px "楷体";
+            color: #f0f0f0;
+            animation: fontStyle 5s linear infinite;
+        }
+        @keyframes fontStyle {
+            0%{
+                text-shadow: 0 0 0px #fefcc9;
+            }
+            20%{
+                text-shadow: 10px -10px 20px #ffae34;
+            }
+            40%{
+                text-shadow: 0px -20px 30px #ec760c;
+            }
+            60%{
+                text-shadow: -10px -30px 40px #cd4606;
+            }
+            80%{
+                text-shadow: -15px -40px 50px #973716;
+            }
+            100%{
+                text-shadow: 0 0 0px #fefcc9;
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span>灵动指尖</span>
+</div>
+</body>
+</html>

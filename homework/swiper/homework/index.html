@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Swiper-3.4.2/dist/css/swiper.min.css" rel="stylesheet">
+    <script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+        }
+        img{
+            height: 400px;
+        }
+        .swiper-container{
+            width: 100%;
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/1.jpg"></div>
+        <div class="swiper-slide"><img src="images/2.jpg"></div>
+        <div class="swiper-slide"><img src="images/3.jpg"></div>
+        <div class="swiper-slide"><img src="images/4.jpg"></div>
+        <div class="swiper-slide"><img src="images/5.jpg"></div>
+        <div class="swiper-slide"><img src="images/6.jpg"></div>
+        <div class="swiper-slide"><img src="images/7.jpg"></div>
+        <div class="swiper-slide"><img src="images/8.jpg"></div>
+    </div>
+    <div class="swiper-button-prev" aria-disabled="false" tabindex="0" role="button" aria-label="Previous slide">
+        &nbsp;</div>
+    <div class="swiper-button-next " aria-disabled="true" tabindex="0" role="button" aria-label="Next slide">
+        &nbsp;</div>
+</div>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+        autoplay:4000,              //设置自动滑动时间间隔
+        //initialSlide: 0,          //设定初始化时slide的索引，默认0
+        //direction: 'horizontal',     //设定滑动方向 vertical纵向
+        //speed:300,                   //设定slider自动滑动开始到结束的时间（单位ms）默认300 transition-timing-function改变速度曲线
+        autoplayDisableOnInteraction:false, //设定用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+        loop: false,                     //设置循环首尾相接滚动，不会从新回到第一张再滚动
+        grabCursor: true,               //设置鼠标滑动手型
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+//        slidesPerView: 4,
+//        spaceBetween: 40,
+//
+//        breakpoints: {
+//            //当宽度小于等于320
+//            320: {
+//                slidesPerView: 1,
+//                spaceBetweenSlides: 10
+//            },
+//            //当宽度小于等于480
+//            480: {
+//                slidesPerView: 2,
+//                spaceBetweenSlides: 20
+//            },
+//            //当宽度小于等于640
+//            640: {
+//                slidesPerView: 3,
+//                spaceBetweenSlides: 30
+//            }
+//        }
+    })
+</script>
+</body>
+</html>

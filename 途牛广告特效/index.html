@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>途牛广告特效</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            height: 735px;
+            min-width: 1280px;
+            background: url("images/f1_1.jpg") no-repeat center/cover;
+            overflow: hidden;
+        }
+        .container .content{
+            position: relative;
+            height: 700px;
+            width: 1200px;
+            margin: 0px auto;
+        }
+        .container .content .yun1{
+            position: absolute;
+            top: 70px;
+            left: 280px;
+            animation: yun1 2s linear infinite;
+            animation-direction: alternate-reverse;
+        }
+        .container .content .yun2{
+            position: absolute;
+            top: 150px;
+            left: 1000px;
+            animation: yun2 3s linear infinite;
+            animation-direction: alternate;
+        }
+        .container .content .yun3{
+            position: absolute;
+            top: 170px;
+            left: 20px;
+            animation: yun3 3s linear infinite;
+            animation-direction: alternate-reverse;
+        }
+        .container .content .san{
+            position: absolute;
+            top: 130px;
+            left: 230px;
+            animation: san 2s linear infinite;
+            animation-direction: alternate;
+        }
+        .container .content .lu{
+            position: absolute;
+            top: 125px;
+            left: 800px;
+            animation: lu 1.5s ease-in infinite;
+            transform-origin: 0px 200px;
+            animation-direction: alternate;
+        }
+        .container .content .font1{
+            position: absolute;
+            top: 200px;
+            left: 270px;
+            animation: font1 5s linear infinite;
+        }
+        .container .content .point1{
+            position: absolute;
+            top: 510px;
+            left: 161px;
+            animation: point1 0.8s linear infinite;
+            animation-direction: alternate;
+        }
+        .container .content .point2{
+            position: absolute;
+            top: 510px;
+            left: 403px;
+            animation: point1 2s linear infinite;
+            animation-direction: alternate-reverse;
+        }
+        .container .content .point3{
+            position: absolute;
+            top: 510px;
+            left: 647px;
+            animation: point1 1s linear infinite;
+            animation-direction: alternate;
+        }
+        .container .content .point4{
+            position: absolute;
+            top: 510px;
+            left: 889px;
+            animation: point1 2s linear infinite;
+            animation-direction: alternate-reverse;
+        }
+
+
+        @keyframes yun1 {
+            from{
+                left: 280px;
+            }
+            to{
+                left:  320px;
+            }
+        }
+        @keyframes yun2 {
+            from{
+                left: 1000px;
+            }
+            to{
+                left:  1060px;
+            }
+        }
+        @keyframes yun3 {
+            from{
+                left: 20px;
+            }
+            to{
+                left:  -10px;
+            }
+        }
+        @keyframes san {
+            from{
+                top: 130px;
+            }
+            to{
+                top:  160px;
+            }
+        }
+        @keyframes lu {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            80%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform: rotateZ(7deg);
+            }
+        }
+        @keyframes font1 {
+            0%{
+                transform: scale(1,1);
+            }
+            40%{
+                transform: scale(1.08,1.08);
+                opacity: 1;
+            }
+            41%{
+                transform: scale(0,0);
+                opacity: 0;
+            }
+            80%{
+                transform: scale(1.1,1.1);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1,1);
+                opacity: 1;
+            }
+        }
+        @keyframes point1 {
+            from{
+                top: 510px;
+            }
+            to{
+                top: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img class="yun1" src="images/yun1.png">
+            <img class="yun2" src="images/yun2.png">
+            <img class="yun3" src="images/yun3.png">
+            <img class="san" src="images/san.png">
+            <img class="lu" src="images/lu.png">
+            <img class="font1" src="images/font1.png">
+            <img class="point1" src="images/1.png">
+            <img class="point2" src="images/2.png">
+            <img class="point3" src="images/3.png">
+            <img class="point4" src="images/4.png">
+        </div>
+    </div>
+</body>
+</html>

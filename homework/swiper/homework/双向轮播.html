@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="Swiper-3.4.2/dist/css/swiper.min.css" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #tab1 img{
+            height: 500px;
+        }
+        #tab2{
+            background-color: #F0F0F0;
+        }
+        #tab2 .swiper-slide{
+            width: 200px;
+        }
+        #tab2 img{
+            height: 100px;
+        }
+        img{vertical-align:middle;}
+    </style>
+</head>
+<body>
+<div class="swiper-container" id="tab1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/d1.jpg"></div>
+        <div class="swiper-slide"><img src="img/d2.jpg"></div>
+        <div class="swiper-slide"><img src="img/d3.jpg"></div>
+        <div class="swiper-slide"><img src="img/d4.jpg"></div>
+        <div class="swiper-slide"><img src="img/d5.jpg"></div>
+        <div class="swiper-slide"><img src="img/d6.jpg"></div>
+        <div class="swiper-slide"><img src="img/d7.jpg"></div>
+        <div class="swiper-slide"><img src="img/d8.jpg"></div>
+        <div class="swiper-slide"><img src="img/d9.jpg"></div>
+    </div>
+</div>
+<div class="swiper-container" id="tab2">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/1.jpg"></div>
+        <div class="swiper-slide"><img src="img/2.jpg"></div>
+        <div class="swiper-slide"><img src="img/3.jpg"></div>
+        <div class="swiper-slide"><img src="img/4.jpg"></div>
+        <div class="swiper-slide"><img src="img/5.jpg"></div>
+        <div class="swiper-slide"><img src="img/6.jpg"></div>
+        <div class="swiper-slide"><img src="img/7.jpg"></div>
+        <div class="swiper-slide"><img src="img/8.jpg"></div>
+        <div class="swiper-slide"><img src="img/9.jpg"></div>
+    </div>
+</div>
+<script src="Swiper-3.4.2/dist/js/swiper.min.js"></script>
+<script>
+    var tab1 = new Swiper ('#tab1', {
+        autoplay: 2000,
+        centeredSlides: true,
+        loop: true,
+        initialSlide:4
+    })
+    var tab2 = new Swiper ('#tab2', {
+        loop:true,
+        slidesPerView: 7,
+        loopedSlides:1,
+        spaceBetween: 10,
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        initialSlide:4
+
+    })
+    tab2.params.control = tab1;//需要在Swiper1初始化后，Swiper2控制Swiper1
+</script>
+</body>
+</html>

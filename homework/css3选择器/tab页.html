@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab选项卡</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: 微软雅黑;
+        }
+        .content{
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+            color: white;
+        }
+        .content ul{
+            position: relative;
+            height: 100px;
+        }
+        .content ul li{
+            list-style: none;
+            width: 300px;
+            font-size: 13px;
+        }
+        .content ul li label{
+            position: relative;
+            display: block;
+            top: -25px;
+            float: left;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #ccc;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            transition: 0.2s;
+        }
+        .content ul li label:hover{
+            background-color: #9e9e9e;
+        }
+        .content ul li input{
+            display: none;
+        }
+        .content ul li div{
+            position: absolute;
+            top:0px;
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            line-height: 24px;
+            background-color: darkgray;
+            display: none;
+            z-index: 3;
+        }
+        .content input[id^="tab"]:checked ~ div[id^="tab-content"]{
+            display: block;
+        }
+        .content input[id^="tab"]:checked ~ label{
+            background-color: darkgray;
+            top: -30px;
+            padding-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <ul>
+            <li>
+                <input type="radio" name="tabs" id="tab1" checked/>
+                <label for="tab1">新闻</label>
+                <div id="tab-content-1">
+                    <p>这栋房子占路中央 无法拆迁还卡住路</p>
+                    <p>牺牲女飞行员余旭之母：希望女儿梦里来陪我</p>
+                    <p>内蒙古包头居民楼天然气爆炸 遇难人数增至5人</p>
+                    <p>英国恐袭嫌疑人照片公布 女王嘉奖救人者</p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab2" />
+                <label for="tab2">娱乐</label>
+                <div id="tab-content-2">
+                    <p>苏永康儿子正脸照曝光 小脸圆嘟嘟超可爱</p>
+                    <p>林心如送给女儿一双鞋 暴露了小海豚的公主属性</p>
+                    <p>Kimi剪头发 林志颖推荐童年造型却被儿子吐槽</p>
+                    <p>如果《吐槽大会》经费足，应该给这十五个人颁大奖</p>
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab3" />
+                <label for="tab3">体育</label>
+                <div id="tab-content-3">
+                    <p>国足酒店云雾缭绕 蔡慧康训练表情亮眼</p>
+                    <p>孙兴慜谈韩国队败走长沙：我上场也不一定能赢国足</p>
+                    <p>拳台再现悲剧一幕 宣布赛果时17岁小将倒地身亡</p>
+                    <p>知道哈登韦少的故事吗？真男人就是要跟命运作战</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

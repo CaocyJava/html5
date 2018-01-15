@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环形星星旋转</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            background: radial-gradient(ellipse at center,#34679a 0%, #214163 50%, #0d1926 100%);
+            overflow: hidden;
+            perspective: 800px;
+        }
+        .container{
+            height: 500px;
+            width: 500px;
+            margin: 100px auto;
+            animation: ccy 5s linear infinite;
+        }
+        .container div{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            margin: 94px 90px;
+            border: 1px solid whitesmoke;
+            border-radius: 50%;
+            transform: rotateX(99deg) rotateY(0deg);
+        }
+        .container div:nth-child(2){
+            transform: rotateX(99deg) rotateY(60deg)
+        }
+        .container div:nth-child(3){
+            transform: rotateX(99deg) rotateY(-60deg)
+        }
+        .container div:after{
+            content: "";
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            position: absolute;
+            top: -10px;
+            left: 143px;
+            border-radius: 50%;
+            animation: run 2s linear infinite;
+            transform-origin: 8px 160px;
+        }
+        .container div:nth-child(2):after{
+            animation-delay: 0.5s;
+        }
+        .container div:nth-child(3):after{
+            animation-delay: 0.2s;
+        }
+        @keyframes run {
+            0%{
+                transform: rotateZ(0deg);
+                box-shadow: 0 0 0 transparent;
+            }
+            50%{
+                transform: rotateZ(180deg);
+                box-shadow: 0 0 25px #fff;
+            }
+            100%{
+                transform: rotateZ(360deg);
+                box-shadow: 0 0 0 transparent;
+            }
+        }
+        /*@keyframes ccy {
+            from{
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+            to{
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+        }*/
+        .container .div{
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 30px;
+            margin: 220px 225px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <span class="div"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            display: flex;
+            width: 900px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            flex-flow: row nowrap;
+            /*align-items: baseline;*/
+            align-content: center;
+        }
+        .container div{
+            width: 100px;
+            border: 1px solid red;
+            background-color: #f0f0f0;
+            font: bold 100px/100px "微软雅黑";
+            text-align: center;
+            margin-right: 5px;
+            color: blue;
+        }
+        .container div:nth-child(1){height: 100px;}
+        .container div:nth-child(2){height: 100px;}
+        .container div:nth-child(3){height: 100px;}
+        .container div:nth-child(4){height: 100px;}
+        .container div:nth-child(5){height: 100px;}
+        .container div:nth-child(6){height: 100px;}
+        /*
+            父级六大属性
+            flex-direction  盒子排列方向 row(默认) row-reverse column column-reverse
+            flex-wrap       控制flex容器是单行或者多行 nowrap(默认) wrap wrap-reverse
+            flex-flow       以上两种形式简写 row nowrap(默认)
+            justify-content 项目在主轴的对齐方式 flex-start(默认左对齐) flex-end center
+                            space-between两端对齐 space-around 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+            align-items     项目在交叉轴上对齐方式  stretch(默认) 如果项目没有设置高度或者为auto，则自动撑满父级高度
+                            flex-start 沿着交叉轴起点  flex-end  center交叉轴中点排列 baseline项目的第一行文字的基线对齐
+            align-content   属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+                            flex-start flex-end center space-between space-around strech
+            项目六大属性
+            order  		项目排序  默认0 可为负数
+            flex-grow	项目拓展比例  默认0
+            flex-shrink	项目缩小比例 （默认为1），即如果空间不足，该项目将缩小
+            flex-basis	在分配多余空间之前，项目占据的主轴空间（main size）浏览器根据这个属性，计算主轴是否有多余空间
+                        <length>：	用长度值来定义宽度。不允许负值
+	                    <percentage>：	用百分比来定义宽度。不允许负值
+                        content：		基于内容自动计算宽度
+            flex		复合属性  0  1  auto
+            align-self	自定义项目align-items  auto（默认） | flex-start | flex-end | center | baseline | stretch
+
+
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

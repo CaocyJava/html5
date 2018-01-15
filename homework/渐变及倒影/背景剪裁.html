@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景剪裁</title>
+    <style>
+        .div{
+            height: 200px;
+            width: 400px;
+            margin: 200px auto;
+            background: url("images/3.jpg") no-repeat 100% 100%/cover;
+            font: italic bold 80px/200px "微软雅黑";
+            text-align: center;
+            color: transparent;
+            -webkit-background-clip: text;
+            animation: ccy 5s linear infinite;
+        }
+        @keyframes ccy {
+            0%{
+                background-position: 40px 0;
+            }
+            50%{
+                background-position: -30px 0;
+            }
+            100%{
+                background-position: 40px 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <span>灵动指尖</span>
+</div>
+</body>
+</html>

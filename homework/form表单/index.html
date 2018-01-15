@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form智能表单</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        form{
+            margin-top: 100px;
+        }
+        form .content{
+            float: left;
+            width: 500px;
+        }
+        form .content div{
+            margin: 10px 50px;
+        }
+        form .content div input:nth-child(2){
+            width: 150px;
+        }
+        form .content div label{
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="post">
+    <div class="content">
+        <div>
+            <label for="email">1.email：</label>
+            <input id="email" type="email">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="url">2.url：</label>
+            <input id="url" type="url">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="number">3.number：</label>
+            <input id="number" type="number">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="range">4.range：</label>
+            <input id="range" type="range" min="0" max="100" step="1" value="10">
+            <input type="submit" value="提交">
+        </div>
+    </div>
+    <div class="content">
+        <div>
+            <label for="date">1.date：</label>
+            <input id="date" type="date">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="datetime-local">2.datetime-local：</label>
+            <input id="datetime-local" type="datetime-local">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="mouth">3.mouth：</label>
+            <input id="mouth" type="mouth">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="week">4.week：</label>
+            <input id="week" type="week">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="time">5.time：</label>
+            <input id="time" type="time">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="search">6.search：</label>
+            <input id="search" type="search">
+            <input type="submit" value="提交">
+        </div>
+        <div>
+            <label for="time">7.color：</label>
+            <input id="color" type="color">
+            <input type="submit" value="提交">
+        </div>
+    </div>
+    <div class="content">
+        <div>
+            <label for="placeholder">1.placeholder：</label>
+            <input id="placeholder" type="text" placeholder="请填写用户名">
+        </div>
+        <div>
+            <label for="autocomplete">2.autocomplete：</label>
+            <input id="autocomplete" type="text" autocomplete="on">
+        </div>
+        <div>
+            <label for="autofocus">3.autofocus：</label>
+            <input id="autofocus" type="text" autofocus>
+        </div>
+        <div>
+            <label for="required">4.required：</label>
+            <input id="required" type="text" required>
+        </div>
+        <div>
+            <label for="pattern">5.pattern：</label>
+            <input id="pattern" type="text" pattern="\d{1,5}">
+        </div>
+        <div>
+            <label for="file">6.file：</label>
+            <input id="file" type="file">
+        </div>
+        <div>
+            <label for="list">7.list：</label>
+            <input id="list" type="text" list="data">
+            <datalist id='data'>
+                <option value="aaaaaaaaaa">aaaaaaaaaa</option>
+                <option value="bbbbbbbbbb">bbbbbbbbbb</option>
+                <option value="cccccccccc">cccccccccc</option>
+                <option value="ddddddddd">ddddddddd</option>
+                <option value="dwowwoneene">dwowwoneene</option>
+
+            </datalist>
+        </div>
+    </div>
+</form>
+</body>
+</html>

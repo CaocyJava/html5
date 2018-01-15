@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            position: relative;
+            width: 790px;
+            height: 340px;
+            margin: 50px auto;
+        }
+        ul li{
+            list-style: none;
+        }
+        .container .btn{
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 40%;
+            z-index: 2;
+        }
+        .container .btn li{
+            float: left;
+        }
+        .container .btn li a{
+            display: block;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin-right: 5px;
+            background-color: coral;
+        }
+        .container .btn li a:hover{
+            background-color: orangered;
+        }
+        .container .img li{
+            position: absolute;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .img li:target{
+            opacity: 1;
+        }
+        .container input{
+            display: none;
+        }
+        .container input:checked ~ .img li:nth-child(1) {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" id="radio" checked>
+        <ul class="btn">
+            <li><a href="#tab1"></a></li>
+            <li><a href="#tab2"></a></li>
+            <li><a href="#tab3"></a></li>
+            <li><a href="#tab4"></a></li>
+        </ul>
+        <ul class="img">
+            <li id="tab1"><img src="images/1.jpg"></li>
+            <li id="tab2"><img src="images/2.jpg"></li>
+            <li id="tab3"><img src="images/3.jpg"></li>
+            <li id="tab4"><img src="images/4.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遮罩</title>
+    <style>
+        .ccy{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+            width: 900px;
+            height: 500px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        .bac{
+
+            width: 900px;
+            height: 500px;
+            font-size:150px;
+            background: url("images/4.jpg") no-repeat  0 0/cover;
+            -webkit-mask-image: url("images/apple.png"),url("images/apple.png"),url("images/apple.png"),url("images/apple.png");
+            -webkit-mask-repeat: no-repeat;
+            animation: fly 15s linear;
+            -webkit-mask-position: center center;
+            -webkit-mask-size: 50%;
+            -webkit-transform: rotateZ(0deg);
+        }
+        @keyframes fly {
+            0%{
+                -webkit-mask-position: center center;
+                -webkit-mask-size: 50%;
+                -webkit-transform: rotateZ(0deg);
+            }
+            25%{
+                -webkit-mask-position: 200px 100px,700px 100px,200px 300px,700px 300px;
+                -webkit-mask-size: 5%;
+                -webkit-transform: rotateZ(90deg);
+            }
+            40%{
+                -webkit-mask-position: 200px 100px,700px 100px,200px 300px,700px 300px;
+                -webkit-mask-size: 5%;
+                -webkit-transform: rotateZ(180deg);
+                -webkit-transform-origin: center center;
+            }
+            65%{
+                -webkit-mask-position: top right,top left,bottom left,bottom right;
+                -webkit-mask-size: 10%;
+                -webkit-transform: rotateZ(180deg);
+            }
+            80%{
+                -webkit-mask-position: center center;
+                -webkit-mask-size: 30%;
+                -webkit-transform: rotateZ(90deg);
+            }
+            100%{
+                -webkit-mask-position: center center;
+                -webkit-mask-size: 50%;
+                -webkit-transform: rotateZ(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="ccy">
+    <div class="bac"></div>
+</div>
+</body>
+</html>

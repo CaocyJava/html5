@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .clearfix:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        .header,.footer{
+            position:fixed;
+            width:100%;
+            z-index:2;
+            line-height:50px;
+            background:#000;
+            color:#fff;
+            text-align:center;
+            font-size:50px;
+        }
+        .footer{
+            bottom:0;
+        }
+        #wrapper{
+            position: absolute;
+            width: 100%;
+            top: 50px;
+            bottom: 50px;
+        }
+        #wrapper .content{
+            position: absolute;
+            width: 100%;
+        }
+        #wrapper .content ul li{
+            padding:0 10px;
+            line-height:30px;
+            border-bottom:1px solid #ccc;
+        }
+        #wrapper .content .scrollDown,.scrollUp{
+            display: none;
+        }
+        #wrapper .content .scrollDown .icon{
+            width: 80px;
+            height: 80px;
+            float: left;
+            background: url("images/icon.png") no-repeat;
+            transition:transform 1s;
+            transform:rotate(0deg);
+        }
+        #wrapper .content .scrollDown .move{
+            transform: rotate(180deg);
+        }
+        #wrapper .content .scrollDown .loading{
+            background-position: 0 -80px;
+            animation: run 2s ease-in-out;
+        }
+        @keyframes run {
+            0%{transform: rotate(180deg);}
+            100%{transform: rotate(720deg);}
+        }
+        #wrapper .content .scrollDown .text{
+            width:150px;
+            line-height:80px;
+            float: left;
+        }
+        /*scrollUp*/
+        #wrapper .content .scrollUp .icon{
+            width: 80px;
+            height: 80px;
+            float: left;
+            background: url("images/icon.png") no-repeat;
+            transition:transform 1s;
+            transform:rotate(180deg);
+        }
+        #wrapper .content .scrollUp .move{
+            transform: rotate(0deg);
+        }
+        #wrapper .content .scrollUp .loading{
+            background-position: 0 -80px;
+            animation: runUp 2s ease-in-out;
+        }
+        @keyframes runUp {
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(-720deg);}
+        }
+        #wrapper .content .scrollUp .text{
+            width:150px;
+            line-height:80px;
+            float: left;
+
+        }
+    </style>
+</head>
+<body>
+<div class="header">scroll</div>
+<div id="wrapper">
+    <div class="content">
+        <div class="scrollDown clearfix">
+            <div class="icon"></div>
+            <div class="text">下拉刷新</div>
+        </div>
+        <ul id="add">
+            <li>hello word1</li>
+            <li>hello word2</li>
+            <li>hello word3</li>
+            <li>hello word4</li>
+            <li>hello word5</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word</li>
+            <li>hello word98</li>
+            <li>hello word99</li>
+        </ul>
+        <div class="scrollUp clearfix">
+            <div class="icon"></div>
+            <div class="text">上拉刷新</div>
+        </div>
+    </div>
+</div>
+<div class="footer">scroll</div>
+</body>
+<script src='js/jquery-3.2.0.min.js'></script>
+<script src='js/iscroll-probe.js'></script>
+<script>
+    window.onload=function () {
+        var iscroll = new IScroll('#wrapper',{
+            mouseWheel: true,
+            scrollbars: false,
+            probeType: 2
+        });
+        var iconDown = $(".scrollDown").find(".icon");
+        var textDown = $(".scrollDown").find(".text");
+
+        var iconUp = $(".scrollUp").find(".icon");
+        var textUp = $(".scrollUp").find(".text");
+
+        var step = 0;
+
+        iscroll.on('scroll',function () {  //滚动状态
+            if(step==0&&this.y>20){
+                $(".scrollDown").show();
+                iscroll.refresh();
+                iconDown.addClass("move");
+                textDown.text("松开更新更多...");
+                step = 1;
+            }
+        })
+        iscroll.on('scrollEnd',function () {
+            if(step==1&&iconDown.attr("class").match("move")){
+                iconDown.addClass("loading");
+                textDown.text("更新中...");
+                setTimeout(function () {
+                    downContent();
+                    $(".scrollDown").hide();
+                    iconDown.removeClass("loading");
+                    iconDown.removeClass("move");
+                },2000);
+                iscroll.refresh();
+                step = 0;
+            }
+        })
+
+        iscroll.on('scroll',function () {  //滚动状态
+            if(step==0&&this.y<-20){
+                $(".scrollUp").show();
+                iscroll.refresh();
+                iconUp.addClass("move");
+                textUp.text("松开更新更多...");
+                step = 1;
+            }
+        })
+
+        iscroll.on('scrollEnd',function () {
+            if(step==1&&iconUp.attr("class").match("move")){
+                iconUp.addClass("loading");
+                textUp.text("更新中...");
+                setTimeout(function () {
+                    upContent();
+                    $(".scrollUp").hide();
+                    iconUp.removeClass("loading");
+                    iconUp.removeClass("move");
+                },2000);
+                iscroll.refresh();
+                step = 0;
+            }
+        })
+
+        function  downContent() {
+            var li = $("<li></li>");
+            li.text("new hello word");
+            $("#add").prepend(li);
+        }
+
+        function  upContent() {
+            var li = $("<li></li>");
+            li.text("end hello word");
+            $("#add").append(li);
+        }
+    }
+</script>
+</html>

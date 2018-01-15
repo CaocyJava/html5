@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D球体旋转</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            perspective: 800px;
+            background-color: #000;
+        }
+        .container{
+            position: relative;
+            height: 400px;
+            width: 400px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: run 10s linear infinite;
+        }
+        .container .content{
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            margin: 50px;
+            transform-style: preserve-3d
+        }
+        .container .content .circle{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+            margin: auto;
+            border-radius: 50%;
+        }
+        .container .content .small{
+             height: 220px;
+             width: 220px;
+             border: 1px solid yellow;
+         }
+        .container .content .small:nth-child(1){
+            transform: translateZ(-50px);
+        }
+        .container .content .small:nth-child(2){
+            transform: translateZ(50px);
+        }
+        .container .content .big{
+            height: 250px;
+            width: 250px;
+            border: 1px solid yellow;
+        }
+        .container .content:nth-child(1) .big:after{
+            content: "";
+            position: absolute;
+            height: 125px;
+            width: 250px;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .container .content:nth-child(1) .big:before{
+            content: "";
+            position: absolute;
+            height: 250px;
+            width: 125px;
+            border-right: 1px solid #ccc;
+
+        }
+        .container .content:nth-child(3) .big:after{
+            content: "";
+            position: absolute;
+            height: 125px;
+            width: 250px;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .container .content:nth-child(3) .big:before{
+            content: "";
+            position: absolute;
+            height: 250px;
+            width: 125px;
+            border-right: 1px solid #ccc;
+
+        }
+        .container .content:nth-child(2) .small{
+            border-color: #cd00cd;
+        }
+        .container .content:nth-child(2) .big{
+            border-color: #cd00cd;
+        }
+        .container .content:nth-child(2){
+            transform: rotateX(45deg);
+        }
+        .container .content:nth-child(3) .small{
+            border-color: blue;
+        }
+        .container .content:nth-child(3) .big{
+            border-color: blue;
+        }
+        .container .content:nth-child(3){
+            transform: rotateX(90deg);
+        }
+        @keyframes run {
+            from{transform: rotateY(0deg) rotateZ(0deg) rotateX(0deg)}
+            to{transform: rotateY(360deg) rotateZ(360deg) rotateX(360deg)}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="circle small"></div>
+            <div class="circle small"></div>
+            <div class="circle big"></div>
+        </div>
+        <div class="content">
+            <div class="circle small"></div>
+            <div class="circle small"></div>
+            <div class="circle big"></div>
+        </div>
+        <div class="content">
+            <div class="circle small"></div>
+            <div class="circle small"></div>
+            <div class="circle big"></div>
+        </div>
+    </div>
+</body>
+</html>

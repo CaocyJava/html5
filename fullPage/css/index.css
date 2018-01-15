@@ -1,0 +1,163 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#dowebok .section div{
+    position: relative;
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+/*page1 start*/
+#dowebok .section div.box1 img:nth-child(1){
+    position: absolute;
+    top: 350px;
+    left: 150px;
+}
+#dowebok .section div.box1 img:nth-child(2){
+    position: absolute;
+    top: -506px;
+    left: 670px;
+    animation: topToDown 2.5s;
+    animation-fill-mode:forwards;
+    z-index: 10;
+}
+#dowebok .section div.box1 img:nth-child(3){
+    position: absolute;
+    top: 140px;
+    left: 150px;
+}
+#dowebok .section div.box1 img:nth-child(4){
+    position: absolute;
+    top: 200px;
+    left: 550px;
+}
+#dowebok .section div.box1 img:nth-child(5){
+    position: absolute;
+    top: 470px;
+    left: 480px;
+}
+#dowebok .section div.box1 img:nth-child(6){
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+#dowebok .section div.box1 img.wheel{
+    animation: run 3s 2.5s linear infinite;
+}
+@keyframes topToDown {
+    from{transform: translateY(0px)}
+    to{transform: translateY(820px)}
+}
+@keyframes run {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(360deg)}
+}
+/*page2 start*/
+#dowebok .section div.box2 img:nth-child(1){
+    position: absolute;
+    top: 350px;
+    left: 150px;
+}
+#dowebok .section div.box2 img:nth-child(2){
+    position: absolute;
+    top: 200px;
+    left: 730px;
+    animation: goDown 2s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+#dowebok .section div.box2 img:nth-child(3){
+    position: absolute;
+    top: 0px;
+    left: 800px;
+    animation: rightToLeft 2s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes goDown {
+    from{transform: translateY(0px)}
+    to{transform: translateY(300px)}
+}
+@keyframes rightToLeft {
+    from{transform: translateX(0px)}
+    to{transform: translateX(-650px)}
+}
+/*box3 start*/
+#dowebok .section div.box3 img:nth-child(1){
+    position: absolute;
+    top: 690px;
+    left: 150px;
+}
+#dowebok .section div.box3 img:nth-child(2){
+    position: absolute;
+    top: -170px;
+    left: 200px;
+    animation: getDown 2.5s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes getDown {
+    from{transform: translateY(0px)}
+    to{transform: translateY(620px)}
+}
+#dowebok .section div.box3 img:nth-child(3){
+    position: absolute;
+    top: 400px;
+    left: 150px;
+    animation: getTop 2.5s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes getTop {
+    from{transform: translateY(0px)}
+    to{transform: translateY(-200px)}
+}
+/*box4 start*/
+#dowebok .section div.box4 img:nth-child(1){
+    position: absolute;
+    top: 300px;
+    left: 110px;
+    animation: turnRotate 2.5s;
+    transform-origin: right bottom;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes turnRotate {
+    from{transform: rotateZ(0deg)}
+    to{transform: rotateZ(30deg)}
+}
+#dowebok .section div.box4 img:nth-child(2){
+    position: absolute;
+    top: 450px;
+    left: 120px;
+}
+#dowebok .section div.box4 img:nth-child(3){
+    position: absolute;
+    top: 550px;
+    left: 750px;
+    animation: getLeft 2.5s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes getLeft {
+    from{transform: translateX(0px)}
+    to{transform: translateX(-240px)}
+}
+#dowebok .section div.box4 img:nth-child(4){
+    position: absolute;
+    top: 200px;
+    left: 520px;
+}
+#dowebok .section div.box4 img:nth-child(5){
+    position: absolute;
+    top: 300px;
+    left: 750px;
+    animation: goTopp 2.5s;
+    animation-fill-mode:forwards;
+    animation-play-state: paused;
+}
+@keyframes goTopp {
+    from{transform: translateY(0px)}
+    to{transform: translateY(-200px)}
+}
